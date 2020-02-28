@@ -12,26 +12,6 @@ $_SESSION["user"]=null;
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-/*
-$err="";
-if (isset($_REQUEST["btn"]))
-{
-    $usr=$_REQUEST["usr_name"];
-    $pass=$_REQUEST["usr_pass"];
-    if ($_REQUEST["usr_pass"]==$_REQUEST["usr_confirm_pass"])
-    {
-        $_SESSION["user"]=$_REQUEST["usr_name"];
-        $sql="Insert into userinfo (Username,Password) Values ('$usr','$pass')";
-        mysqli_query($conn,$sql);
-        header('location:home.php');
-    }
-    else
-    {
-        $err="**Both passwords don't match.**";
-    }
-}*/
-?>
 <script>
 $(document).ready(function()
 {

@@ -11,27 +11,7 @@ $_SESSION["user"]=null;
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<?php
-    /*
-    if (isset($_REQUEST["btn"]))
-    {
-        $usr=$_REQUEST["usr_name"];
-        $pass=$_REQUEST["usr_pass"];
-        $sql="Select * from userinfo where Username='$usr' and Password='$pass'";
-        $result=mysqli_query($conn,$sql);
-        $recordsFound=mysqli_num_rows($result);
-        if ($recordsFound==1)
-        {
-            $_SESSION["user"]=$_REQUEST["usr_name"];
-            header('Location:home.php');
-        }
-        else{
-            $_SESSION["user"]=null;
-            $error="**Invalid Username or Password**";
-        }
-    }*/
 
-?>
 <script>
 $(document).ready(function()
 {
