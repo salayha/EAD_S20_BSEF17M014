@@ -20,14 +20,36 @@ $(document).ready(function()
     {
         var a=$("#user").val();
          var b=$("#pswd").val();
-        var dataToSend={"action":"Checklogin","uname":a,"pass":b};
-        var settings={
+         if (a=="" || b=="")
+         {
+            if (a=="")
+            {
+                $("#errUsr").text("This field can't be empty");
+            }
+            else
+            {
+                $("#errUsr").text("");
+            }
+            if (b=="")
+            {
+                $("#errPas").text("This field can't be empty");
+            }
+            else
+            {
+                $("#errPas").text("");
+            }
+         }
+         else
+         {
+            var dataToSend={"action":"Checklogin","uname":a,"pass":b};
+            var settings={
             type:"post",
             dataType:"json",
             url:"api.php",
             data:dataToSend,
             success: myFunction,
             error: OnError 
+         }
         };
         $.ajax(settings);
         console.log("sent");
@@ -61,6 +83,10 @@ Username: </div>
 <input type="text" id="user" class="inp" name="usr_name" required="required"> <br/> </div>
 </div>
 <div class="row">
+<div class="col-10">
+<h5 id="errUsr" style="color:red;  font-style:italic;"></h5>
+ </div> </div>
+<div class="row">
 <div class="col-3">
 Password: 
 </div>
@@ -69,11 +95,15 @@ Password:
 </div>
 <div class="row">
 <div class="col-10">
+<h5 id="errPas" style="color:red;  font-style:italic;"></h5>
+ </div> </div>
+<div class="row">
+<div class="col-10">
 <button id="btn-login" name="btn"  style="margin-top:20px;" class="btn btn-lg btn-primary btn-block" >Log in</button> </div>
 </div>
 <div class="row">
 <div class="col-10">
-<h5 id="err" style="color:red;"></h5>;
+<h5 id="err" style="color:red;"></h5>
  </div> </div>
 <div class="row">
 <div class="col-10">
