@@ -1,0 +1,58 @@
+.menu {
+    border: 2px solid #fff;
+    background-color: burlywood;
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  body{
+    background-image: url("b5.jpg");
+    
+}
+  .menu-container {
+    /* ... */
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    /* Add this */
+  }
+  .item
+  {
+    text-align: center;
+    border: 6px solid #fff;
+    height: 100px;
+    font-size:25px;
+  }
+  .item:hover{
+      background-color:lightseagreen;
+  }
+  #new
+  {
+    width: 30%;
+    text-align: center;
+    border: 5px solid #fff;
+    height: 100px;
+    font-size:25px;
+    background-color: lightslategray;
+  }
+  #new:hover{
+    height:120px;
+  }
+  #welcome
+{
+    margin-top:5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom:5%;
+    text-align: center;
+    background-color: whitesmoke;
+    color:brown;
+    font-style: italic;
+    font-weight: bolder;
+    border: 5px solid brown;
+    border-radius: 10%;
+    padding:20px;
+    font-size:25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

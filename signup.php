@@ -21,7 +21,7 @@ $(document).ready(function()
         var a=$("#user").val();
          var b=$("#pswd").val();
          var d=$("#name").val();
-         var c=$("#conf_pswd").val();
+         var c=$("#conf_pswd").val(); 
          if (a=="" || b=="" || c=="" || d=="")
          {
             if (a=="")
