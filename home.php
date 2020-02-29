@@ -60,6 +60,7 @@ $(document).ready(function()
     let a=$("#hid").val();
    if (a!="")
    {
+    $("#errName").text("");
     var dataToSend={"action":"makeNew","fname":a, "parent":id};
     var settings={
     type:"post",
@@ -78,11 +79,6 @@ $(document).ready(function()
    }
    
    });
-    function OnError()
-    {
-        console.log("err");
-        alert("error occured");
-    }
     function myFunction(r)
     {
       if (r["fid"]==-1)
@@ -99,6 +95,23 @@ $(document).ready(function()
         $(".menu").append(div);
         $("#hid").val("");
       }
+      $('.item').click(function()
+     {
+      id= $(this).attr("fid");
+      $('.item').remove();
+      var dataToSend={"action":"displayRoots", "parent":id};
+      var settings={
+      type:"post",
+      dataType:"json",
+      url:"api.php",
+      data:dataToSend,
+      success: myMainFunction,
+      error: OnError 
+    }
+        $.ajax(settings);
+        console.log("sent");
+        return false;
+   });
     }
     $('.item').click(function()
      {
@@ -111,26 +124,12 @@ $(document).ready(function()
       url:"api.php",
       data:dataToSend,
       success: myMainFunction,
-      error: OnErr 
+      error: OnError 
     }
         $.ajax(settings);
         console.log("sent");
         return false;
    });
-   function OnErr()
-    {
-        console.log("err");
-        alert("error occured");
-    }
-    function myLastFunction(r)
-    {
-      for (var i=0;i<r.data.length;i++)
-     {
-      var obj=r.data[i];
-      var div= $("<div></div>").addClass('item').text(obj.FolderName).attr("fid",obj.FolderId);
-      $(".menu").append(div);
-      }
-    } 
 }
 </script>
 <div id="welcome">
