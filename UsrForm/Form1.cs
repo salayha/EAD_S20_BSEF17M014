@@ -30,8 +30,20 @@ namespace UsrForm
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            newFrm obj= new newFrm();
+            newFrm obj= new newFrm("");
             obj.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Existing obj = new Existing();
+            obj.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

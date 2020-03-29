@@ -38,22 +38,28 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.usr_name = new System.Windows.Forms.TextBox();
+            this.usr_login = new System.Windows.Forms.TextBox();
+            this.usr_password = new System.Windows.Forms.TextBox();
+            this.usr_email = new System.Windows.Forms.TextBox();
+            this.usr_address = new System.Windows.Forms.RichTextBox();
+            this.usr_nic = new System.Windows.Forms.TextBox();
+            this.usr_dob = new System.Windows.Forms.DateTimePicker();
+            this.usr_age = new System.Windows.Forms.NumericUpDown();
+            this.usr_gender = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Upload = new System.Windows.Forms.Button();
+            this.usr_image = new System.Windows.Forms.PictureBox();
+            this.usr_cricket = new System.Windows.Forms.CheckBox();
+            this.usr_hockey = new System.Windows.Forms.CheckBox();
+            this.usr_chess = new System.Windows.Forms.CheckBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.loginErr = new System.Windows.Forms.Label();
+            this.AgeErr = new System.Windows.Forms.Label();
+            this.emptyErr = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.usr_age)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usr_image)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,82 +152,75 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Sports";
             // 
-            // textBox1
+            // usr_name
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.usr_name.Location = new System.Drawing.Point(77, 6);
+            this.usr_name.Name = "usr_name";
+            this.usr_name.Size = new System.Drawing.Size(100, 20);
+            this.usr_name.TabIndex = 10;
             // 
-            // textBox2
+            // usr_login
             // 
-            this.textBox2.Location = new System.Drawing.Point(77, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
+            this.usr_login.Location = new System.Drawing.Point(77, 29);
+            this.usr_login.Name = "usr_login";
+            this.usr_login.Size = new System.Drawing.Size(121, 20);
+            this.usr_login.TabIndex = 11;
             // 
-            // textBox3
+            // usr_password
             // 
-            this.textBox3.Location = new System.Drawing.Point(77, 53);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
+            this.usr_password.Location = new System.Drawing.Point(77, 53);
+            this.usr_password.Name = "usr_password";
+            this.usr_password.Size = new System.Drawing.Size(100, 20);
+            this.usr_password.TabIndex = 12;
             // 
-            // textBox4
+            // usr_email
             // 
-            this.textBox4.Location = new System.Drawing.Point(77, 79);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 13;
+            this.usr_email.Location = new System.Drawing.Point(77, 79);
+            this.usr_email.Name = "usr_email";
+            this.usr_email.Size = new System.Drawing.Size(100, 20);
+            this.usr_email.TabIndex = 13;
             // 
-            // richTextBox1
+            // usr_address
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(77, 138);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(240, 45);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.usr_address.Location = new System.Drawing.Point(77, 138);
+            this.usr_address.Name = "usr_address";
+            this.usr_address.Size = new System.Drawing.Size(240, 45);
+            this.usr_address.TabIndex = 15;
+            this.usr_address.Text = "";
             // 
-            // textBox7
+            // usr_nic
             // 
-            this.textBox7.Location = new System.Drawing.Point(77, 220);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 17;
+            this.usr_nic.Location = new System.Drawing.Point(77, 220);
+            this.usr_nic.Name = "usr_nic";
+            this.usr_nic.Size = new System.Drawing.Size(100, 20);
+            this.usr_nic.TabIndex = 17;
             // 
-            // textBox9
+            // usr_dob
             // 
-            this.textBox9.Location = new System.Drawing.Point(77, 272);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 19;
+            this.usr_dob.Location = new System.Drawing.Point(77, 246);
+            this.usr_dob.Name = "usr_dob";
+            this.usr_dob.Size = new System.Drawing.Size(200, 20);
+            this.usr_dob.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // usr_age
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 246);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.usr_age.Location = new System.Drawing.Point(77, 194);
+            this.usr_age.Name = "usr_age";
+            this.usr_age.Size = new System.Drawing.Size(53, 20);
+            this.usr_age.TabIndex = 21;
             // 
-            // numericUpDown1
+            // usr_gender
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(77, 194);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(53, 20);
-            this.numericUpDown1.TabIndex = 21;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AllowDrop = true;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.usr_gender.AllowDrop = true;
+            this.usr_gender.FormattingEnabled = true;
+            this.usr_gender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(77, 111);
-            this.comboBox1.MaxDropDownItems = 2;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
+            this.usr_gender.Location = new System.Drawing.Point(77, 111);
+            this.usr_gender.MaxDropDownItems = 2;
+            this.usr_gender.Name = "usr_gender";
+            this.usr_gender.Size = new System.Drawing.Size(69, 21);
+            this.usr_gender.TabIndex = 22;
             // 
             // button1
             // 
@@ -231,6 +230,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -240,45 +240,119 @@
             this.button2.TabIndex = 24;
             this.button2.Text = " Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
+            // Upload
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(531, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(153, 154);
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.Upload.Location = new System.Drawing.Point(540, 211);
+            this.Upload.Name = "Upload";
+            this.Upload.Size = new System.Drawing.Size(92, 36);
+            this.Upload.TabIndex = 26;
+            this.Upload.Text = "Upload";
+            this.Upload.UseVisualStyleBackColor = true;
+            this.Upload.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button3
+            // usr_image
             // 
-            this.button3.Location = new System.Drawing.Point(568, 184);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 36);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Upload";
-            this.button3.UseVisualStyleBackColor = true;
+            this.usr_image.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usr_image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.usr_image.Location = new System.Drawing.Point(493, 12);
+            this.usr_image.Name = "usr_image";
+            this.usr_image.Size = new System.Drawing.Size(189, 193);
+            this.usr_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.usr_image.TabIndex = 25;
+            this.usr_image.TabStop = false;
+            // 
+            // usr_cricket
+            // 
+            this.usr_cricket.AutoSize = true;
+            this.usr_cricket.Location = new System.Drawing.Point(77, 279);
+            this.usr_cricket.Name = "usr_cricket";
+            this.usr_cricket.Size = new System.Drawing.Size(59, 17);
+            this.usr_cricket.TabIndex = 27;
+            this.usr_cricket.Text = "Cricket";
+            this.usr_cricket.UseVisualStyleBackColor = true;
+            // 
+            // usr_hockey
+            // 
+            this.usr_hockey.AutoSize = true;
+            this.usr_hockey.Location = new System.Drawing.Point(163, 278);
+            this.usr_hockey.Name = "usr_hockey";
+            this.usr_hockey.Size = new System.Drawing.Size(63, 17);
+            this.usr_hockey.TabIndex = 28;
+            this.usr_hockey.Text = "Hockey";
+            this.usr_hockey.UseVisualStyleBackColor = true;
+            // 
+            // usr_chess
+            // 
+            this.usr_chess.AutoSize = true;
+            this.usr_chess.Location = new System.Drawing.Point(249, 278);
+            this.usr_chess.Name = "usr_chess";
+            this.usr_chess.Size = new System.Drawing.Size(55, 17);
+            this.usr_chess.TabIndex = 29;
+            this.usr_chess.Text = "Chess";
+            this.usr_chess.UseVisualStyleBackColor = true;
+            // 
+            // loginErr
+            // 
+            this.loginErr.AutoSize = true;
+            this.loginErr.ForeColor = System.Drawing.Color.DarkRed;
+            this.loginErr.Location = new System.Drawing.Point(211, 29);
+            this.loginErr.Name = "loginErr";
+            this.loginErr.Size = new System.Drawing.Size(125, 13);
+            this.loginErr.TabIndex = 30;
+            this.loginErr.Text = "Username already in Use";
+            this.loginErr.Visible = false;
+            // 
+            // AgeErr
+            // 
+            this.AgeErr.AutoSize = true;
+            this.AgeErr.ForeColor = System.Drawing.Color.Maroon;
+            this.AgeErr.Location = new System.Drawing.Point(156, 196);
+            this.AgeErr.Name = "AgeErr";
+            this.AgeErr.Size = new System.Drawing.Size(60, 13);
+            this.AgeErr.TabIndex = 31;
+            this.AgeErr.Text = "Invalid Age";
+            this.AgeErr.Visible = false;
+            // 
+            // emptyErr
+            // 
+            this.emptyErr.AutoSize = true;
+            this.emptyErr.ForeColor = System.Drawing.Color.Maroon;
+            this.emptyErr.Location = new System.Drawing.Point(310, 300);
+            this.emptyErr.Name = "emptyErr";
+            this.emptyErr.Size = new System.Drawing.Size(116, 13);
+            this.emptyErr.TabIndex = 32;
+            this.emptyErr.Text = "Please Fill All the Fields";
+            this.emptyErr.Visible = false;
             // 
             // @newFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.emptyErr);
+            this.Controls.Add(this.AgeErr);
+            this.Controls.Add(this.loginErr);
+            this.Controls.Add(this.usr_chess);
+            this.Controls.Add(this.usr_hockey);
+            this.Controls.Add(this.usr_cricket);
+            this.Controls.Add(this.Upload);
+            this.Controls.Add(this.usr_image);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.usr_gender);
+            this.Controls.Add(this.usr_age);
+            this.Controls.Add(this.usr_dob);
+            this.Controls.Add(this.usr_nic);
+            this.Controls.Add(this.usr_address);
+            this.Controls.Add(this.usr_email);
+            this.Controls.Add(this.usr_password);
+            this.Controls.Add(this.usr_login);
+            this.Controls.Add(this.usr_name);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -291,8 +365,9 @@
             this.Controls.Add(this.label1);
             this.Name = "@newFrm";
             this.Text = "New User";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.newFrm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.usr_age)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usr_image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,19 +385,25 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox usr_name;
+        private System.Windows.Forms.TextBox usr_login;
+        private System.Windows.Forms.TextBox usr_password;
+        private System.Windows.Forms.TextBox usr_email;
+        private System.Windows.Forms.RichTextBox usr_address;
+        private System.Windows.Forms.TextBox usr_nic;
+        private System.Windows.Forms.DateTimePicker usr_dob;
+        private System.Windows.Forms.NumericUpDown usr_age;
+        private System.Windows.Forms.ComboBox usr_gender;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox usr_image;
+        private System.Windows.Forms.Button Upload;
+        private System.Windows.Forms.CheckBox usr_cricket;
+        private System.Windows.Forms.CheckBox usr_hockey;
+        private System.Windows.Forms.CheckBox usr_chess;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label loginErr;
+        private System.Windows.Forms.Label AgeErr;
+        private System.Windows.Forms.Label emptyErr;
     }
 }
