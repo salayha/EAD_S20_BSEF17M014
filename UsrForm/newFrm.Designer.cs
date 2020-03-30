@@ -43,7 +43,6 @@
             this.usr_password = new System.Windows.Forms.TextBox();
             this.usr_email = new System.Windows.Forms.TextBox();
             this.usr_address = new System.Windows.Forms.RichTextBox();
-            this.usr_nic = new System.Windows.Forms.TextBox();
             this.usr_dob = new System.Windows.Forms.DateTimePicker();
             this.usr_age = new System.Windows.Forms.NumericUpDown();
             this.usr_gender = new System.Windows.Forms.ComboBox();
@@ -58,6 +57,8 @@
             this.loginErr = new System.Windows.Forms.Label();
             this.AgeErr = new System.Windows.Forms.Label();
             this.emptyErr = new System.Windows.Forms.Label();
+            this.user_nic = new System.Windows.Forms.MaskedTextBox();
+            this.emailErr = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usr_age)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usr_image)).BeginInit();
             this.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             this.usr_password.Location = new System.Drawing.Point(77, 53);
             this.usr_password.Name = "usr_password";
+            this.usr_password.PasswordChar = '*';
             this.usr_password.Size = new System.Drawing.Size(100, 20);
             this.usr_password.TabIndex = 12;
             // 
@@ -177,7 +179,7 @@
             // 
             this.usr_email.Location = new System.Drawing.Point(77, 79);
             this.usr_email.Name = "usr_email";
-            this.usr_email.Size = new System.Drawing.Size(100, 20);
+            this.usr_email.Size = new System.Drawing.Size(157, 20);
             this.usr_email.TabIndex = 13;
             // 
             // usr_address
@@ -187,13 +189,6 @@
             this.usr_address.Size = new System.Drawing.Size(240, 45);
             this.usr_address.TabIndex = 15;
             this.usr_address.Text = "";
-            // 
-            // usr_nic
-            // 
-            this.usr_nic.Location = new System.Drawing.Point(77, 220);
-            this.usr_nic.Name = "usr_nic";
-            this.usr_nic.Size = new System.Drawing.Size(100, 20);
-            this.usr_nic.TabIndex = 17;
             // 
             // usr_dob
             // 
@@ -301,9 +296,9 @@
             this.loginErr.ForeColor = System.Drawing.Color.DarkRed;
             this.loginErr.Location = new System.Drawing.Point(211, 29);
             this.loginErr.Name = "loginErr";
-            this.loginErr.Size = new System.Drawing.Size(125, 13);
+            this.loginErr.Size = new System.Drawing.Size(164, 13);
             this.loginErr.TabIndex = 30;
-            this.loginErr.Text = "Username already in Use";
+            this.loginErr.Text = "Username or email already in Use";
             this.loginErr.Visible = false;
             // 
             // AgeErr
@@ -328,12 +323,33 @@
             this.emptyErr.Text = "Please Fill All the Fields";
             this.emptyErr.Visible = false;
             // 
+            // user_nic
+            // 
+            this.user_nic.Location = new System.Drawing.Point(77, 220);
+            this.user_nic.Mask = "00000-0000000-0";
+            this.user_nic.Name = "user_nic";
+            this.user_nic.Size = new System.Drawing.Size(100, 20);
+            this.user_nic.TabIndex = 33;
+            // 
+            // emailErr
+            // 
+            this.emailErr.AutoSize = true;
+            this.emailErr.ForeColor = System.Drawing.Color.Maroon;
+            this.emailErr.Location = new System.Drawing.Point(240, 79);
+            this.emailErr.Name = "emailErr";
+            this.emailErr.Size = new System.Drawing.Size(66, 13);
+            this.emailErr.TabIndex = 34;
+            this.emailErr.Text = "Invalid Email";
+            this.emailErr.Visible = false;
+            // 
             // @newFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.emailErr);
+            this.Controls.Add(this.user_nic);
             this.Controls.Add(this.emptyErr);
             this.Controls.Add(this.AgeErr);
             this.Controls.Add(this.loginErr);
@@ -347,7 +363,6 @@
             this.Controls.Add(this.usr_gender);
             this.Controls.Add(this.usr_age);
             this.Controls.Add(this.usr_dob);
-            this.Controls.Add(this.usr_nic);
             this.Controls.Add(this.usr_address);
             this.Controls.Add(this.usr_email);
             this.Controls.Add(this.usr_password);
@@ -390,7 +405,6 @@
         private System.Windows.Forms.TextBox usr_password;
         private System.Windows.Forms.TextBox usr_email;
         private System.Windows.Forms.RichTextBox usr_address;
-        private System.Windows.Forms.TextBox usr_nic;
         private System.Windows.Forms.DateTimePicker usr_dob;
         private System.Windows.Forms.NumericUpDown usr_age;
         private System.Windows.Forms.ComboBox usr_gender;
@@ -405,5 +419,7 @@
         private System.Windows.Forms.Label loginErr;
         private System.Windows.Forms.Label AgeErr;
         private System.Windows.Forms.Label emptyErr;
+        private System.Windows.Forms.MaskedTextBox user_nic;
+        private System.Windows.Forms.Label emailErr;
     }
 }

@@ -16,7 +16,6 @@ namespace UsrForm
     public partial class @newFrm : Form
     {
         String user="";
-        String image;
         public @newFrm(String caller)
         {
             if (caller!="")
@@ -56,7 +55,7 @@ namespace UsrForm
             else
             {
                 this.Close();
-                Welcome f = new Welcome(user, image);
+                Welcome f = new Welcome(user);
                 f.Show();
             }
           
@@ -64,6 +63,7 @@ namespace UsrForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             String uniqueName = "";
             if (usr_image.Image != null)
             {
@@ -89,11 +89,11 @@ namespace UsrForm
             dto.address = usr_address.Text.Trim();
             dto.age = Convert.ToInt32(usr_age.Value);
             dto.email = usr_email.Text.Trim();
-            dto.NIC = usr_nic.Text.Trim();
+            dto.NIC = user_nic.Text.Trim();
             dto.DOB = Convert.ToDateTime(usr_dob.Value);
-            dto.cricket = (usr_cricket.Checked == true ? "1" : "0");
-            dto.hockey = (usr_hockey.Checked == true ? "1" : "0");
-            dto.chess = (usr_chess.Checked == true ? "1" : "0");
+            dto.cricket = (usr_cricket.Checked == true ? true : false);
+            dto.hockey = (usr_hockey.Checked == true ? true : false);
+            dto.chess = (usr_chess.Checked == true ? true : false);
             dto.image = uniqueName;
             dto.created = DateTime.Now;
             if (dto.name == "" || dto.login == "" || dto.password == "" || gender == "" || dto.address == "" || dto.NIC == "" || dto.DOB.ToString() == "" || dto.image == "")
@@ -104,26 +104,53 @@ namespace UsrForm
             {
                 AgeErr.Visible = true;
             }
+            else if (UserBO.validateEmail(dto.email)!=true)
+            {
+                emailErr.Visible = true;
+            }
             else
             {
-                int result = UserBO.insertUser(dto);
-                if (result == 1)
+                if (user=="")
                 {
-                    user = dto.login;
-                    image = dto.image;
-                    this.Close();
-                    Welcome f = new Welcome(user, image);
-                    f.Show();
+                    int result = UserBO.insertUser(dto);
+                    if (result == 1)
+                    {
+                        user = dto.login;
+                        this.Close();
+                        Welcome f = new Welcome(user);
+                        f.Show();
 
+                    }
+                    else if (result == -1)
+                    {
+                        loginErr.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("There was an error in db.");
+                    }
                 }
-                else if (result == -1)
+                else if (user!="")
                 {
-                    loginErr.Visible = true;
+                    int result = UserBO.updateUser(dto);
+                    if (result == 1)
+                    {
+                        user = dto.login;
+                        this.Close();
+                        Welcome f = new Welcome(user);
+                        f.Show();
+
+                    }
+                    else if (result == -1)
+                    {
+                        loginErr.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("There was an error in db.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("There was an error in db.");
-                }
+               
             }
         }
 
@@ -139,6 +166,7 @@ namespace UsrForm
                 UserDTO dto = UserBO.loadUser(user);
                 usr_name.Text = dto.name;
                 usr_login.Text = dto.login;
+                usr_login.ReadOnly = true;
                 if (dto.gender == 'M')
                 {
                     usr_gender.Text = "Male";
@@ -151,37 +179,16 @@ namespace UsrForm
                 usr_email.Text = dto.email;
                 usr_address.Text = dto.address;
                 usr_age.Value = dto.age;
-                usr_nic.Text = dto.NIC;
+                user_nic.Text = dto.NIC;
                 usr_dob.Value = dto.DOB;
-                if (dto.cricket == "1")
-                {
-                    usr_cricket.Checked = true;
-                    
-                }
-                else
-                {
-                    usr_cricket.Checked = false;
-                }
-                if (dto.hockey == "1")
-                {
-                    usr_hockey.Checked = true;
-                }
-                else
-                {
-                    usr_hockey.Checked = false;
-                }
-                if (dto.chess == "1")
-                {
-                    usr_chess.Checked = true;
-                }
-                else
-                {
-                    usr_chess.Checked = false;
-                }
+                usr_cricket.Checked = dto.cricket;
+                usr_hockey.Checked = dto.hockey;
+                usr_chess.Checked = dto.chess;
                 String applicationBasePath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 String pathToSaveImage = applicationBasePath + @"\images\";
                 String filepath = pathToSaveImage + dto.image;
                 usr_image.Image = Image.FromFile(filepath);
+                button1.Text = "Update";
             }
             
         }
