@@ -1,0 +1,10 @@
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\Users.BAL.dll
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\Users.BAL.pdb
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\USERS.DAL.dll
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\USERS.DAL.pdb
+E:\EAD_S20_BSEF17M014\Users.BAL\obj\Debug\Users.BAL.csprojAssemblyReference.cache
+E:\EAD_S20_BSEF17M014\Users.BAL\obj\Debug\Users.BAL.csproj.CopyComplete
+E:\EAD_S20_BSEF17M014\Users.BAL\obj\Debug\Users.BAL.dll
+E:\EAD_S20_BSEF17M014\Users.BAL\obj\Debug\Users.BAL.pdb
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\Entities.dll
+E:\EAD_S20_BSEF17M014\Users.BAL\bin\Debug\Entities.pdb

@@ -1,0 +1,5 @@
+E:\EAD_S20_BSEF17M014\Entities\bin\Debug\Entities.dll
+E:\EAD_S20_BSEF17M014\Entities\bin\Debug\Entities.pdb
+E:\EAD_S20_BSEF17M014\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+E:\EAD_S20_BSEF17M014\Entities\obj\Debug\Entities.dll
+E:\EAD_S20_BSEF17M014\Entities\obj\Debug\Entities.pdb
