@@ -16,12 +16,15 @@ namespace UsrForm
     public partial class @newFrm : Form
     {
         String user="";
-        public @newFrm(String caller)
+        Boolean isAdmin = false;
+        public @newFrm(String caller,Boolean ad)
         {
             if (caller!="")
             {
                 user = caller;
+               
             }
+            isAdmin = ad;
             InitializeComponent();
         }
 
@@ -135,10 +138,19 @@ namespace UsrForm
                     int result = UserBO.updateUser(dto);
                     if (result == 1)
                     {
-                        user = dto.login;
-                        this.Close();
-                        Welcome f = new Welcome(user);
-                        f.Show();
+                        if (isAdmin==false)
+                        {
+                            user = dto.login;
+                            this.Close();
+                            Welcome f = new Welcome(user);
+                            f.Show();
+                        }
+                        else
+                        {
+                            this.Close();
+                            AdminHome f = new AdminHome();
+                            f.Show();
+                        }
 
                     }
                     else if (result == -1)

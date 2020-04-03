@@ -24,13 +24,15 @@ namespace UsrForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminLogin obj = new AdminLogin();
+            obj.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            newFrm obj= new newFrm("");
+            newFrm obj= new newFrm("",false);
             obj.Show();
         }
 

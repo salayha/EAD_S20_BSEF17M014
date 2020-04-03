@@ -33,7 +33,7 @@ namespace UsrForm
         private void edit_Click(object sender, EventArgs e)
         {
             this.Close();
-            newFrm f = new newFrm(name);
+            newFrm f = new newFrm(name,false);
             f.Show();
         }
 

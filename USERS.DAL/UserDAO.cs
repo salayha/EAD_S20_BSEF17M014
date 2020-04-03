@@ -13,7 +13,7 @@ namespace USERS.DAL
 {
     public static class UserDAO
     {
-        private static String connStr = @"Data Source=.\SQLEXPRESS2019;Initial Catalog=Assignment4;User ID=sa;Password=pucit123";
+        private static String connStr = @"Data Source=.\SQLEXPRESS2019;Initial Catalog=Assignment2;User ID=sa;Password=pucit123";
         public static Boolean validateEmail(String eml)
         {
 
