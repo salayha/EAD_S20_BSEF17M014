@@ -23,7 +23,6 @@ namespace MyProj.Controllers
         public JsonResult Verify(String login, String password)
         {
             Object data = null;
-            var exception = false;
             var url = "";
             var flag = false;
             int res = UserDAO.validateUser(login, password);
@@ -33,12 +32,8 @@ namespace MyProj.Controllers
                 Session["user"] = login;
                 url = Url.Content("~/User/Welcome");
             }
-            if (res == -2)
+            data = new
             {
-                exception = true;   
-            }
-            data = new {
-                exception1 = exception,
                 valid = flag,
                 urlToRedirect = url
             };
@@ -53,7 +48,6 @@ namespace MyProj.Controllers
             Object data = null;
             var url = "";
             var flag = false;
-            var exception = false;
             var err = "";
             int res = UserDAO.insertUser(login, password, uname);
             if (res == 1)
@@ -68,16 +62,11 @@ namespace MyProj.Controllers
                 flag = false;
                 err = "Username already exists, try a different one";
             }
-            else if (res==-2)
-            {
-                exception = true;
-            }
             data = new
             {
                 valid = flag,
                 urlToRedirect = url,
-                error = err,
-                exception1 = exception
+                error = err
             };
             return Json(data, JsonRequestBehavior.AllowGet);
         }
@@ -108,16 +97,10 @@ namespace MyProj.Controllers
         [HttpPost]
         public JsonResult NewFolder(string fname, int parent)
         {
-            var exception = false;
             Object data = null;
             int id = UserDAO.makeNewFolder(fname, parent);
-            if (id==-2)
-            {
-                exception = true;
-            }
             data = new
             {
-                exception1 = exception,
                 fid = id
             };
             return Json(data, JsonRequestBehavior.AllowGet);
