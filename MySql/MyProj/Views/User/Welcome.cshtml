@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/styles/home2.css">
+@section scripts
+{
+    
+    <script>
+        let id = 0;
+        $(document).ready(function () {
+            var dataToSend = { "parent": id };
+            var settings = {
+                type: "POST",
+                dataType: "json",
+                url: "/User/displayRoots",
+                data: dataToSend,
+                success: myMainFunction,
+                error: OnError
+            }
+            $.ajax(settings);
+            console.log("sent to load");
+            return false;
+        });
+        function OnError() {
+            console.log("err");
+            alert("error occured");
+        }
+        function myMainFunction(r) {
+            if (r) {
+                for (var i = 0; i < r.length; i++) {
+                    var obj = r[i];
+                    var div = $("<div></div>").addClass('item').text(obj.Fname).attr("fid", obj.FID);
+                    $(".menu").append(div);
+                }
+
+            }
+            else {
+                 alert("didnt enter");
+            }
+          
+            //function for making new folder
+            $("#new").click(function () {
+                $("#hid").attr("type", "text");
+                $("#errName").text("");
+            });
+            $("#btn-hid").click(function () {
+                $("#errName").text("");
+                let a = $("#hid").val();
+                if (a != "") {
+                    $("#errName").text("");
+                    var dataToSend = { "fname": a, "parent": id };
+                    var settings = {
+                        type: "POST",
+                        dataType: "json",
+                        url: "/User/NewFolder",
+                        data: dataToSend,
+                        success: myFunction,
+                        error: OnError
+                    }
+                    $.ajax(settings);
+                    console.log("sent for new");
+                    return false;
+                }
+                else {
+                    $("#errName").text("Please enter a name.");
+                }
+
+            });
+            function myFunction(r) {
+                if (r.fid == -1) {
+                    $("#errName").text("A folder with this name already exists.");
+                    $("#hid").val("");
+                }
+                else {
+                    $("#errName").text(" ");
+                    let a = $("#hid").val();
+                    $("#hid").attr("type", "hidden");
+                    var div = $("<div></div>").addClass('item').text(a).attr("fid", r.fid);
+                    $(".menu").append(div);
+                    $("#hid").val("");
+                }
+                $('.item').click(function () {
+                    id = $(this).attr("fid");
+                    $('.item').remove();
+                    var dataToSend = { "parent": id };
+                    var settings = {
+                        type: "POST",
+                        dataType: "json",
+                        url: "/User/displayRoots",
+                        data: dataToSend,
+                        success: myMainFunction,
+                        error: OnError
+                    }
+                    $.ajax(settings);
+                    console.log("sent for new cz existed");
+                    return false;
+                });
+            }
+            $('.item').click(function () {
+                id = $(this).attr("fid");
+                $('.item').remove();
+                var dataToSend = { "parent": id };
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: "/User/displayRoots",
+                    data: dataToSend,
+                    success: myMainFunction,
+                    error: OnError
+                }
+                $.ajax(settings);
+                console.log("sent last");
+                return false;
+            });
+        }
+    </script>
+
+
+}
+
+<div id="welcome">
+    Welcome to your account <span>@ViewBag.usr</span>
+</div>
+<div id="new" fid="" pid="" fname="">
+    New folder'+'
+    <input id="hid" type="hidden" value="" placeholder="folderName" />
+</div>
+<button id="btn-hid" style="width:30%"> create </button>
+<h5 id="errName" style="color:red; font-style:italic"></h5>
+<div class='menu-container'>
+    <div class='menu'>
+
+    </div>
+</div>

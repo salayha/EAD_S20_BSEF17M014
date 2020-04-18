@@ -1,0 +1,22 @@
+body
+{
+    background-image: url("b5.jpg");
+}
+#myform
+{
+    margin-top:5%;
+    margin-bottom:auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    position: center;
+    background-color: whitesmoke;
+    border: 1px solid brown;
+    border-radius: 5%;
+    padding:50px;
+}
+.inp
+{
+    width:100%;
+    font-size:25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

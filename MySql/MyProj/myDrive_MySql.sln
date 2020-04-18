@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myDrive_MySql", "myDrive_MySql.csproj", "{04EA4870-0438-4297-AD58-848B6FDA3042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{1CB0604F-4FD9-4CAF-858B-EABF57C4E287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "..\Entities\Entities.csproj", "{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04EA4870-0438-4297-AD58-848B6FDA3042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04EA4870-0438-4297-AD58-848B6FDA3042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04EA4870-0438-4297-AD58-848B6FDA3042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04EA4870-0438-4297-AD58-848B6FDA3042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB0604F-4FD9-4CAF-858B-EABF57C4E287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB0604F-4FD9-4CAF-858B-EABF57C4E287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB0604F-4FD9-4CAF-858B-EABF57C4E287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB0604F-4FD9-4CAF-858B-EABF57C4E287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F27BB893-ECAD-47D1-82AA-741CA8F38BD9}
+	EndGlobalSection
+EndGlobal
