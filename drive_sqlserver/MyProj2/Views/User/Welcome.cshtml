@@ -25,10 +25,11 @@
         });
         function OnError() {
             console.log("err");
-            alert("error occured");
+            alert("error occured during loading");
         }
         function myMainFunction(r) {
             if (r) {
+                 $("#errName").text(" ");
                 for (var i = 0; i < r.length; i++) {
                     var obj = r[i];
                     var div = $("<div></div>").addClass('item').text(obj.Fname).attr("fid", obj.FID);
@@ -37,16 +38,16 @@
 
             }
             else {
-                 alert("didnt enter");
+                 alert("exception");
             }
           
             //function for making new folder
             $("#new").click(function () {
                 $("#hid").attr("type", "text");
-                $("#errName").text("");
+                $("#errName").text(" ");
             });
             $("#btn-hid").click(function () {
-                $("#errName").text("");
+                $("#errName").text(" ");
                 let a = $("#hid").val();
                 if (a != "") {
                     $("#errName").text("");

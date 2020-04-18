@@ -113,12 +113,13 @@ namespace DAL
                         command = new SqlCommand(sqlQuery, conn);
                         fid = (int)command.ExecuteScalar();
                     }
+            
                     return fid;
                 }
             }
             catch (Exception)
             {
-                return -1;
+                return -2;
             }
         }
     }
