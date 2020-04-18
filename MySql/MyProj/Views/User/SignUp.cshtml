@@ -60,7 +60,7 @@
             });
             function OnError() {
                 console.log("err");
-                alert("an error occured");
+                alert("an error occured during signup");
             }
             function myFunction(r) {
                 if (r.valid == true) {
@@ -68,6 +68,9 @@
                     location.href = r.urlToRedirect;
                 }
                 else if (r.valid == false) {
+                    if (r.exception1 == true) {
+                        alert("exception");
+                    }
                     $("#err").text(r.error);
                 }
             }

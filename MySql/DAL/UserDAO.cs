@@ -46,7 +46,7 @@ namespace DAL
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    String sqlQuery = "Select count(*) from userinfo where Username='" + login + "' ";
+                    String sqlQuery = "Select * from userinfo where Username='" + login + "' ";
                     MySqlCommand command = new MySqlCommand(sqlQuery, conn);
                     var result =command.ExecuteScalar();
                     if (result!=null)
@@ -98,28 +98,36 @@ namespace DAL
         {
             try
             {
-                int fid=-1;
+                int fid=-2;
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    String sqlQuery = "Select count(*) from folders where ParentID='" + parent + "' and FolderName='"+fname+"'";
+                    String sqlQuery = "Select * from folders where ParentID='" + parent + "' and FolderName='"+fname+"'";
                     MySqlCommand command = new MySqlCommand(sqlQuery, conn);
-                    var res = (int)command.ExecuteScalar();
-                    if (res == 0)
+                    var res = command.ExecuteScalar();
+                    if (res == null)
                     {
                         sqlQuery = String.Format("Insert into folders (FolderName, ParentID ) Values('{0}','{1}')", fname,parent);
                         command = new MySqlCommand(sqlQuery, conn);
                         res = command.ExecuteNonQuery();
-                        sqlQuery = "Select FolderId from folders where ParentID='" + parent + "' and FolderName='" + fname + "'";
+                        sqlQuery = "Select * from folders where ParentID='" + parent + "' and FolderName='" + fname + "'";
                         command = new MySqlCommand(sqlQuery, conn);
-                        fid = (int)command.ExecuteScalar();
+                        var reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            fid = reader.GetInt32(reader.GetOrdinal("FolderId"));
+                        }
+                    }
+                    else
+                    {
+                        fid = -1;
                     }
                     return fid;
                 }
             }
             catch (Exception)
             {
-                return -1;
+                return -2;
             }
         }
     }
