@@ -37,7 +37,7 @@ namespace WebApiDrive.Controllers
                               expires: DateTime.Now.AddDays(1),
                               signingCredentials: credentials);
             var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
-            return new { data = jwt_token };
+            return jwt_token;
         }
 
 
@@ -108,7 +108,7 @@ namespace WebApiDrive.Controllers
             return data;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public List<FolderDTO> displayRoots()
         {
@@ -117,7 +117,7 @@ namespace WebApiDrive.Controllers
             return data;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public Object NewFolder()
         {
