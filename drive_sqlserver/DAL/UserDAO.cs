@@ -10,8 +10,8 @@ namespace DAL
 {
     public class UserDAO
     {
-        private static String connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
-        //private static String connStr = @"Data Source=.\SQLEXPRESS2019;Initial Catalog=Assignment3;User ID=sa;Password=pucit123";
+        //private static String connStr = System.Configuration.ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString;
+        private static String connStr = @"Data Source=.\SQLEXPRESS2019;Initial Catalog=Assignment3;User ID=sa;Password=pucit123";
         public static int validateUser(String login, String password)
         {
             try

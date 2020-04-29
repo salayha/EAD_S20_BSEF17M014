@@ -6,8 +6,9 @@
 @section scripts
 {
     <script>
-        $(document).ready(function () {
 
+        $(document).ready(function () {
+            var basePath = "https://localhost:44382/";
             $("#btn-login").click(function () {
                 var a = $("#user").val();
                 var b = $("#pswd").val();
@@ -30,24 +31,28 @@
                     var settings = {
                         type: "POST",
                         dataType: "json",
-                        url: "/User/Verify",
+                        url: basePath + "api/UserData/Verify",
                         data: dataToSend,
                         success: myFunction,
                         error: OnError
-                    }
-                };
-                $.ajax(settings);
-                console.log("sent");
-                return false;
+                    };
+                    $.ajax(settings);
+                    console.log("sent");
+                    return false;
+                }
             });
             function OnError() {
                 console.log("err");
                 alert("error occured during login");
             }
             function myFunction(r) {
-                if (r.valid == true) {
-                    console.log("welcome");
-                    location.href = r.urlToRedirect;
+
+               if (r.valid == true) {
+                   console.log("logged in");
+                   
+                   let login = r.user;
+                   localStorage.setItem("my_token", r.token);
+                   setSession(login, r.urlToRedirect);
                 }
                 else {
                     if (r.exception1 == true) {
@@ -56,6 +61,31 @@
                     $("#err").text("**Invalid Username or Password**");
                 }
             }
+            function setSession(login, urlToRedirect) {
+                var dataToSend = { "login": login};
+                var settings = {
+                    type: "POST",
+                    dataType: "json",
+                    url: "/User/SetSession",
+                    data: dataToSend,
+                    success: myf,
+                    error: err
+                };
+
+                $.ajax(settings);
+                console.log("sent");
+                return false;
+            }
+            function myf(r)
+            {
+                        if (r.success) {
+                            location.href = "https://localhost:44365" + "/User/Welcome";
+                        }
+            }
+            function err(err) {
+                        alert(err);
+                    }
+
         });
     </script>
 }

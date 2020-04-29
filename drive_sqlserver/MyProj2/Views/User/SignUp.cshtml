@@ -6,6 +6,8 @@
 @section scripts
     {
     <script>
+        var basePath = "https://localhost:44382/";
+            
         $(document).ready(function () {
             $("#btn-signup").click(function () {
                 var a = $("#user").val();
@@ -48,7 +50,7 @@
                     var settings = {
                         type: "POST",
                         dataType: "json",
-                        url: "/User/InsertUser",
+                        url: basePath+ "api/UserData/InsertUser",
                         data: dataToSend,
                         success: myFunction,
                         error: OnError
@@ -65,7 +67,7 @@
             function myFunction(r) {
                 if (r.valid == true) {
                     console.log("welcome");
-                    location.href = r.urlToRedirect;
+                    location.href = "https://localhost:44365/" + r.urlToRedirect;
                 }
                 else if (r.valid == false) {
                     if (r.exception1 == true) {

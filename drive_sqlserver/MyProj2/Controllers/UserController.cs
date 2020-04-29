@@ -16,77 +16,37 @@ namespace MyProj.Controllers
             ViewBag.MSG = TempData["err"];
             return View();
         }
-
-
-        // [ActionName("Login")]
         [HttpPost]
-        public JsonResult Verify(String login, String password)
+        public JsonResult SetSession(String login)
         {
-            Object data = null;
-            var exception = false;
-            var url = "";
-            var flag = false;
-            int res = UserDAO.validateUser(login, password);
-            if (res == 1)
+            if (login!=null)
             {
-                flag = true;
                 Session["user"] = login;
-                url = Url.Content("~/User/Welcome");
+               
+                var data = new
+                {
+                    success = true
+                };
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-            if (res == -2)
+            else
             {
-                exception = true;   
+                var data = new
+                {
+                    success = false
+                };
+                return Json(data, JsonRequestBehavior.AllowGet);
             }
-            data = new {
-                exception1 = exception,
-                valid = flag,
-                urlToRedirect = url
-            };
-            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
-
-        //[ActionName("SignUp")]
-        [HttpPost]
-        public JsonResult InsertUser(String login, String password, String uname)
-        {
-            Object data = null;
-            var url = "";
-            var flag = false;
-            var exception = false;
-            var err = "";
-            int res = UserDAO.insertUser(login, password, uname);
-            if (res == 1)
-            {
-                flag = true;
-                Session["user"] = login;
-                ViewBag.user = login;
-                url = Url.Content("~/User/Welcome");
-            }
-            else if (res == -1)
-            {
-                flag = false;
-                err = "Username already exists, try a different one";
-            }
-            else if (res==-2)
-            {
-                exception = true;
-            }
-            data = new
-            {
-                valid = flag,
-                urlToRedirect = url,
-                error = err,
-                exception1 = exception
-            };
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
-
+        [HttpGet]
         public ActionResult Welcome()
         {
             if (Session["user"] != null)
             {
+                var login = Session["user"];
                 ViewBag.usr = Session["user"];
+                
                 return View();
             }
             else
@@ -99,28 +59,7 @@ namespace MyProj.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public JsonResult displayRoots(int parent)
-        {
-            List<FolderDTO> data= UserDAO.getRoots(parent);
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
-        [HttpPost]
-        public JsonResult NewFolder(string fname, int parent)
-        {
-            var exception = false;
-            Object data = null;
-            int id = UserDAO.makeNewFolder(fname, parent);
-            if (id==-2)
-            {
-                exception = true;
-            }
-            data = new
-            {
-                exception1 = exception,
-                fid = id
-            };
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
+        
+        
     }
 }

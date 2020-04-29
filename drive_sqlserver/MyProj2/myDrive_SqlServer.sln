@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "..\Entities\Entities.csproj", "{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiDrive", "..\WebApiDrive\WebApiDrive.csproj", "{EC132642-AF17-4787-AE7C-020D0C0DE7BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5743A6C-3DF7-4B7C-B808-0BB9247BB207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC132642-AF17-4787-AE7C-020D0C0DE7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC132642-AF17-4787-AE7C-020D0C0DE7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC132642-AF17-4787-AE7C-020D0C0DE7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC132642-AF17-4787-AE7C-020D0C0DE7BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
